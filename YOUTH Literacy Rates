@@ -1,0 +1,12 @@
+select b.indicator_name, a.country_name, a.1993, a.2003, a.2013 
+from edstats_data a, edstats_series b
+where a.indicator_code = b.series_code 
+and b.topic ="Literacy"
+and b.indicator_name LIKE '%,%%' ESCAPE ','
+and b.indicator_name LIKE '%Youth%'
+and b.indicator_name LIKE '%youth%'
+and b.indicator_name LIKE '%literacy rate%'
+and a.1993 IS NOT NULL
+and a.2003 IS NOT NULL
+and a.2013 IS NOT NULL
+ORDER BY a.2013 ASC;
