@@ -1,0 +1,3 @@
+select short_name, special_notes, national_accounts_base_year, government_accounting_concept, source_of_most_recent_income_and_expenditure_data
+from edstats_country
+where income_group ="Low income" and national_accounts_base_year > 2000;
